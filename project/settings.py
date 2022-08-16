@@ -41,6 +41,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'project.urls'
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = 465
+EMAIL_HOST_USER = 'amoeez14@gmail.com'
+EMAIL_HOST_PASSWORD = 'lamoxunyfasaitoy'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

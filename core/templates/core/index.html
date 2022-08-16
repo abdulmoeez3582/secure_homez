@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-3">
             <img src="{% static 'img/fcicon.png'%}" alt="" width="50%">
-            <h6 class="text-muted p-1"> FR-CV2-Django</h6>
+            <h6 class="text-muted p-1"> Secure Homez</h6>
 
         </div>
         <div class="col-md-6">
@@ -73,16 +73,14 @@
                         <th scope="col"> </th>
                         <th scope="col">Name</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Shift Time</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for profile in absent %}
+                    {% for profile in present %}
                     <tr>
                         <th scope="row">-</th>
                         <td>{{profile.first_name}} {{profile.last_name}}</td>
                         <td>{{profile.status}}</td>
-                        <td>{{profile.shift}}</td>
                     </tr>
                     {% endfor%}
                 </tbody>

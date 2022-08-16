@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container emp-profile pb-3">
-    <form method="POST" action="." class="needs-validation" enctype='multipart/form-data'>
+    <form method="POST" action="" class="needs-validation" enctype='multipart/form-data'>
         {% csrf_token %}
         <div class="row">
             <div class="col-md-4">
@@ -12,44 +12,40 @@
                 <div class="d-flex justify-content-between">
                     <div class="m-1 mr-2">
                         <label class="text-muted"><small>First Name:</small></label>
-                        {{ form.first_name }}
+                        <input required type="text" name="first_name" class="form-control" placeholder="First Name">
                     </div>
 
                     <div class="m-1">
                         <label class="text-muted"><small>Last Name:</small></label>
-                        {{ form.last_name }}
+                        <input required type="text" name="last_name" class="form-control" placeholder="Last Name">
                     </div>
                 </div>
 
                 <div class="ml-1">
                     <label class="text-muted"><small>Phone Number:</small></label>
-                    {{ form.phone }}
+                    <input required type="number" name="phone" class="form-control" placeholder="Phone Number">
                 </div>
                 <div class="m-1">
                     <label class="text-muted"><small>Email:</small></label>
-                    {{ form.email }}
+                    <input required type="email" name="email" class="form-control" placeholder="Email">
                 </div>
                 <div class="m-1">
                     <label class="text-muted"><small>Birth date:</small></label>
-                    {{ form.date }}
+                    <input required type="date" class="form-control" name="date" >
                 </div>
             </div>
 
-
             <div class="col-md-4">
-              <br>
-                <br>
-
-                <div class="m-1">
-                    <label class="text-muted"><small>Profession:</small></label>
-                    {{ form.profession }}
-                </div>
+                <h5 style="color: #ffffff">.</h5><br>
                 <div class="m-1">
                     <label class="text-muted"><small>Relation:</small></label>
-                    {{ form.status }}
+                    <select class="form-control" name="relation">
+                        <option class="form-control" value="Father" name="relation">Father</option>
+                        <option class="form-control" value="Mother" name="relation">Mother</option>
+                        <option class="form-control" value="Brother" name="relation">Brother</option>
+                        <option class="form-control" value="Sister" name="relation">Sister</option>
+                    </select>
                 </div>
-
-
             </div>
 
             <div class="col-md-4">
@@ -68,10 +64,13 @@
                     <img src="{% static 'img/bio.jpg'%}" alt="" width="100%">
                 </div>
                 <div class="mt-3">
-                    {{ form.image }}
+                    <input required type="file" name="image">
                 </div>
             </div>
 
+        </div>
+        <div>
+            {{ error }}
         </div>
         <div class="mt-3">
             <button type="submit" class="btn btn-outline-success m-1">Save</button>

@@ -3,6 +3,9 @@ from .views import *
 
 
 urlpatterns = [
+    path('login',login_admin),
+    path('logout',logout, name='logout'),
+    path('register', register),
     path('', index, name= 'index'),
     path('ajax/', ajax, name= 'ajax'),
     path('scan/',scan,name='scan'),
@@ -16,6 +19,7 @@ urlpatterns = [
 
     path('clear_history/',clear_history,name='clear_history'),
     path('reset/',reset,name='reset'),
+
 
 
 ]
